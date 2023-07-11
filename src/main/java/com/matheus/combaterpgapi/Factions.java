@@ -1,4 +1,4 @@
-package com.rpgcombat;
+package com.matheus.combaterpgapi;
 
 import java.util.ArrayList;
 import java.util.HashMap;

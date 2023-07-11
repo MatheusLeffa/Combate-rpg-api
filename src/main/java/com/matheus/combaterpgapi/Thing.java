@@ -1,4 +1,4 @@
-package com.rpgcombat;
+package com.matheus.combaterpgapi;
 
 public class Thing {
 
@@ -10,13 +10,9 @@ public class Thing {
 
 
     // Constructor
-    public Thing(String name) {
+    public Thing(String name, int health) {
         this.name = name;
-    }
-
-    public Thing(String name, int position) {
-        this.name = name;
-        setPosition(position);
+        this.health = health;
     }
 
     public Thing(String name, int health, int position) {

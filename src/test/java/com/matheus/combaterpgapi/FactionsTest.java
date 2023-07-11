@@ -1,4 +1,4 @@
-package com.rpgcombat;
+package com.matheus.combaterpgapi;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,8 +15,8 @@ class FactionsTest {
     @BeforeEach
     void setUp() {
         factions = new Factions();
-        meleeChar = new MeleeCharacter("MeeleCharacter", 1, 1);
-        rangedChar = new RangedCharacter("RangedCharacter", 1, 1);
+        meleeChar = new MeleeCharacter("MeeleCharacter", 1000, 1,5);
+        rangedChar = new RangedCharacter("RangedCharacter", 1000, 1, 5);
     }
 
     @Test

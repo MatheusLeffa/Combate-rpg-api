@@ -1,4 +1,4 @@
-package com.rpgcombat;
+package com.matheus.combaterpgapi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,20 +12,13 @@ public abstract class BaseCharacter extends Thing {
 
 
     // Constructor
-    public BaseCharacter(String nome) {
-        super(nome);
-    }
-    public BaseCharacter(String name, int position) {
-        super(name,position);
-    }
-    public BaseCharacter(String name, int level, int position){
-        super(name,position);
+    public BaseCharacter(String name, int health, int position, int level){
+        super(name, health, position);
         this.level = level;
     }
 
 
     // Getter
-
     public int getLevel() {
         return level;
     }

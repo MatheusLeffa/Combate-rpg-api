@@ -1,4 +1,4 @@
-package com.rpgcombat;
+package com.matheus.combaterpgapi;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,8 +19,8 @@ class BaseCharacterTest {
     @BeforeEach
     void setUp() {
         factions = new Factions();
-        meleeChar = new MeleeCharacter("MeeleCharacter", 1, 1);
-        rangedChar = new RangedCharacter("RangedCharacter", 1, 1);
+        meleeChar = new MeleeCharacter("MeeleCharacter", 1000, 1,5);
+        rangedChar = new RangedCharacter("RangedCharacter", 1000, 1,5);
     }
 
     @RepeatedTest(5)
