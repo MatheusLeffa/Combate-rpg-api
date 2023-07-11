@@ -1,4 +1,6 @@
-package com.matheus.combaterpgapi;
+package com.matheus.combaterpgapi.model;
+
+import com.matheus.combaterpgapi.model.BaseCharacter;
 
 public class RangedCharacter extends BaseCharacter {
 

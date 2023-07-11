@@ -1,4 +1,4 @@
-package com.matheus.combaterpgapi;
+package com.matheus.combaterpgapi.model;
 
 import java.util.ArrayList;
 import java.util.List;

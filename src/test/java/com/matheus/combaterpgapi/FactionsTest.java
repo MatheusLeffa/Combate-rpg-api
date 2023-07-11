@@ -1,5 +1,9 @@
 package com.matheus.combaterpgapi;
 
+import com.matheus.combaterpgapi.model.BaseCharacter;
+import com.matheus.combaterpgapi.model.Factions;
+import com.matheus.combaterpgapi.model.MeleeCharacter;
+import com.matheus.combaterpgapi.model.RangedCharacter;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

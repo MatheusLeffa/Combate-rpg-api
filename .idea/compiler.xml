@@ -7,11 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="rpgcombat" />
+        <module name="combate-rpg-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Combate_rpg" target="17" />
+      <module name="rpgcombat" target="17" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="combate-rpg-api" options="-parameters" />
+    </option>
   </component>
 </project>
