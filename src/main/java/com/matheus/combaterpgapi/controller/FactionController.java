@@ -20,19 +20,32 @@ public class FactionController {
     }
 
     @GetMapping
-    public List<FactionDTO> findAll (){
+    public List<FactionDTO> findAll(){
         return factionService.findAll()
                 .stream()
                 .map(FactionMapper::entityToDto)
                 .toList();
     }
 
-
+    @GetMapping("/{id}")
+    public FactionDTO findById(@PathVariable Integer id){
+        return FactionMapper.entityToDto(factionService.findById(id));
+    }
 
     @PostMapping
-    public FactionDTO create (@RequestBody FactionDTO faction) {
+    public FactionDTO create(@RequestBody FactionDTO faction){
         Faction entity = FactionMapper.dtoToEntity(faction);
         return FactionMapper.entityToDto(factionService.create(entity));
     }
 
+    @PutMapping
+    public FactionDTO update(@RequestBody FactionDTO faction){
+        Faction entity = FactionMapper.dtoToEntity(faction);
+        return FactionMapper.entityToDto(factionService.update(entity));
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id){
+        factionService.deleteById(id);
+    }
 }

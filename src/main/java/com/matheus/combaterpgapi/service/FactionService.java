@@ -1,12 +1,9 @@
 package com.matheus.combaterpgapi.service;
 
-import com.matheus.combaterpgapi.mapper.FactionMapper;
 import com.matheus.combaterpgapi.model.Faction;
 import com.matheus.combaterpgapi.repository.FactionRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class FactionService {
@@ -32,10 +29,12 @@ public class FactionService {
 
     public Faction update(Faction faction){
         Faction entity = this.findById(faction.getId());
-        // TODO: implementar alterações
+        entity.setFactionName(faction.getFactionName());
         return factionRepository.save(entity);
     }
 
-    //TODO: implementar o delete
+    public void deleteById(Integer id) {
+        factionRepository.deleteById(this.findById(id).getId());
+    }
 
 }
