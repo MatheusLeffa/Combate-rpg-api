@@ -1,11 +1,14 @@
 package com.matheus.combaterpgapi.service;
 
+import com.matheus.combaterpgapi.exception.NotFoundException;
 import com.matheus.combaterpgapi.model.Faction;
 import com.matheus.combaterpgapi.repository.FactionRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class FactionService {
 
     private final FactionRepository factionRepository;
@@ -18,9 +21,9 @@ public class FactionService {
         return factionRepository.findAll();
     }
 
-    public Faction findById(Integer id) {
+    public Faction findById(Integer id){
         return factionRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("ID não localizado!"));
+                .orElseThrow(() -> new NotFoundException("ID não localizado!"));
     }
 
     public Faction create(Faction faction) {
@@ -36,5 +39,4 @@ public class FactionService {
     public void deleteById(Integer id) {
         factionRepository.deleteById(this.findById(id).getId());
     }
-
 }
