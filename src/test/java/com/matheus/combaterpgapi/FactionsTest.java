@@ -1,9 +1,9 @@
 package com.matheus.combaterpgapi;
 
-import com.matheus.combaterpgapi.model.BaseCharacter;
+import com.matheus.combaterpgapi.model.BaseCharacterOriginal;
 import com.matheus.combaterpgapi.model.Factions;
-import com.matheus.combaterpgapi.model.MeleeCharacter;
-import com.matheus.combaterpgapi.model.RangedCharacter;
+import com.matheus.combaterpgapi.model.MeleeCharacterOriginal;
+import com.matheus.combaterpgapi.model.RangedCharacterOriginal;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,14 +13,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 class FactionsTest {
     Factions factions;
-    BaseCharacter meleeChar;
-    BaseCharacter rangedChar;
+    BaseCharacterOriginal meleeChar;
+    BaseCharacterOriginal rangedChar;
 
     @BeforeEach
     void setUp() {
         factions = new Factions();
-        meleeChar = new MeleeCharacter("MeeleCharacter", 1000, 1,5);
-        rangedChar = new RangedCharacter("RangedCharacter", 1000, 1, 5);
+        meleeChar = new MeleeCharacterOriginal("MeeleCharacter", 1000, 1,5);
+        rangedChar = new RangedCharacterOriginal("RangedCharacter", 1000, 1, 5);
     }
 
     @Test

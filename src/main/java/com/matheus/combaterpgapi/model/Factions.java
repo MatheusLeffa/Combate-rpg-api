@@ -1,7 +1,5 @@
 package com.matheus.combaterpgapi.model;
 
-import com.matheus.combaterpgapi.model.BaseCharacter;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,12 +9,12 @@ import java.util.stream.Collectors;
 public class Factions {
 
     // Atributos
-    private final Map<BaseCharacter, List<String>> factionMembers = new HashMap<>();
+    private final Map<BaseCharacterOriginal, List<String>> factionMembers = new HashMap<>();
     private final List<String> factionList = new ArrayList<>();
 
 
     // Metodos publicos
-    public Map<BaseCharacter, List<String>> getFactionMembers() {
+    public Map<BaseCharacterOriginal, List<String>> getFactionMembers() {
         return factionMembers;
     }
 
@@ -24,13 +22,13 @@ public class Factions {
         return factionList;
     }
 
-    public void joinFaction(BaseCharacter character, String faction) {
+    public void joinFaction(BaseCharacterOriginal character, String faction) {
         character.getFaction().add(faction);
         createFaction(faction);
         addFactionMember(character, faction);
     }
 
-    public void leaveFaction(BaseCharacter character, String faction) {
+    public void leaveFaction(BaseCharacterOriginal character, String faction) {
         if (!character.getFaction().contains(faction)) {
             System.out.println("Não foi localizado a facção " + faction + " atribuido ao personagem " + character.getName() + ".");
         } else {
@@ -60,7 +58,7 @@ public class Factions {
     }
 
 
-    private void addFactionMember(BaseCharacter character, String faction) {
+    private void addFactionMember(BaseCharacterOriginal character, String faction) {
         if (!factionMembers.containsKey(character)) {
             factionMembers.put(character, new ArrayList<>());
         }

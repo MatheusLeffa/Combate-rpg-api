@@ -1,83 +1,25 @@
 package com.matheus.combaterpgapi.model;
 
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Entity(name = "thing")
+@Inheritance(strategy = InheritanceType.JOINED)
+@Getter
+@Setter
 public class Thing {
-
-    // Atributos
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private int health = 1000;
+    @Column(nullable = false)
     private boolean alive = true;
+    @Column(nullable = false)
     private int position = 1;
-
-
-    // Constructor
-    public Thing(String name, int health) {
-        this.name = name;
-        this.health = health;
-    }
-
-    public Thing(String name, int health, int position) {
-        this.name = name;
-        this.health = health;
-        setPosition(position);
-    }
-
-
-    // Getters
-    public String getName() {
-        return name;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public boolean getAlive() {
-        return alive;
-    }
-
-    public int getPosition() {
-        return position;
-    }
-
-
-    // Setter
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public void setAlive(boolean alive) {
-        this.alive = alive;
-    }
-
-    public void setPosition(int position) {
-        if (position > 0) {
-            this.position = position;
-        } else {
-            throw new RuntimeException("Deve ser informado valores maiores que 0, na posição do objeto: " + this.name);
-        }
-    }
-
-
-    // Methods
-    public String isAliveStr() {
-        if (this.alive) {
-            return (this.name + " ainda está vivo, com " + this.health + " de vida.");
-        }
-        if (this instanceof BaseCharacter) {
-            return (this.name + " foi morto!");
-        }
-        return (this.name + " foi destruida!");
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof BaseCharacter x) {
-            return this.name.equals(x.getName());
-        }
-        return false;
-    }
-
-    public int distance(Thing target) {
-        return Math.max(Math.abs(this.position - target.position), 0);
-    }
 }

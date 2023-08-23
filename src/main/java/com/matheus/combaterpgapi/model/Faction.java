@@ -16,6 +16,6 @@ public class Faction {
     @Column(unique = true, nullable = false)
     private String factionName;
     @Transient
-    private List<BaseCharacter> characterList;
+    private List<BaseCharacterOriginal> characterList;
 
 }
