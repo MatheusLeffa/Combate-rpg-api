@@ -8,6 +8,6 @@ import java.util.Optional;
 @Repository
 public interface FactionRepository extends JpaRepository<Faction, Integer>{
 
-    Optional<Faction> findOneByName(String factionName);
+    Optional<Faction> findOneByFactionName(String factionName);
 
 }

@@ -1,4 +1,6 @@
-package com.matheus.combaterpgapi.model;
+package com.matheus.combaterpgapi.model.Original;
+
+import com.matheus.combaterpgapi.model.Original.BaseCharacterOriginal;
 
 public class MeleeCharacterOriginal extends BaseCharacterOriginal {
 

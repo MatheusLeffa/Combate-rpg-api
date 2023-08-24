@@ -27,7 +27,7 @@ public class FactionService {
     }
 
     public Faction findOneByName(String name) {
-        return factionRepository.findOneByName(name)
+        return factionRepository.findOneByFactionName(name)
                 .orElseThrow(() -> new NotFoundException("Facção não localizada por nome."));
     }
 

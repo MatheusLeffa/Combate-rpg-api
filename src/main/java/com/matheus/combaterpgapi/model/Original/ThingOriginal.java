@@ -1,4 +1,4 @@
-package com.matheus.combaterpgapi.model;
+package com.matheus.combaterpgapi.model.Original;
 
 public class ThingOriginal {
 

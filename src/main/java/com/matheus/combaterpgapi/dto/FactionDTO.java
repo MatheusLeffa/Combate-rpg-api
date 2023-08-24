@@ -1,6 +1,6 @@
 package com.matheus.combaterpgapi.dto;
 
-import com.matheus.combaterpgapi.model.BaseCharacterOriginal;
+import com.matheus.combaterpgapi.model.Original.BaseCharacterOriginal;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 import java.util.List;

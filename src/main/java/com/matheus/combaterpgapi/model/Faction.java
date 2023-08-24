@@ -1,5 +1,6 @@
 package com.matheus.combaterpgapi.model;
 
+import com.matheus.combaterpgapi.model.Original.BaseCharacterOriginal;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

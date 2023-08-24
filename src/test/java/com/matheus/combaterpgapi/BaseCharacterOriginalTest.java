@@ -1,9 +1,9 @@
 package com.matheus.combaterpgapi;
 
-import com.matheus.combaterpgapi.model.BaseCharacterOriginal;
-import com.matheus.combaterpgapi.model.Factions;
-import com.matheus.combaterpgapi.model.MeleeCharacterOriginal;
-import com.matheus.combaterpgapi.model.RangedCharacterOriginal;
+import com.matheus.combaterpgapi.model.Original.BaseCharacterOriginal;
+import com.matheus.combaterpgapi.model.Original.FactionOriginal;
+import com.matheus.combaterpgapi.model.Original.MeleeCharacterOriginal;
+import com.matheus.combaterpgapi.model.Original.RangedCharacterOriginal;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,7 +14,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 
 class BaseCharacterOriginalTest {
-    Factions factions;
+    FactionOriginal factionOriginal;
     BaseCharacterOriginal meleeChar;
     BaseCharacterOriginal rangedChar;
     int testValue = (int) (Math.random()*100);
@@ -22,7 +22,7 @@ class BaseCharacterOriginalTest {
 
     @BeforeEach
     void setUp() {
-        factions = new Factions();
+        factionOriginal = new FactionOriginal();
         meleeChar = new MeleeCharacterOriginal("MeeleCharacter", 1000, 1,5);
         rangedChar = new RangedCharacterOriginal("RangedCharacter", 1000, 1,5);
     }
@@ -32,7 +32,7 @@ class BaseCharacterOriginalTest {
     void printFaction() {
         for (int i = 0; i < 5; i++) {
             String generatedString = RandomStringUtils.randomAlphanumeric(10);
-            factions.joinFaction(meleeChar,generatedString);
+            factionOriginal.joinFaction(meleeChar,generatedString);
         }
         System.out.println(meleeChar.getFaction());
 
@@ -70,8 +70,8 @@ class BaseCharacterOriginalTest {
     void heal() {
         meleeChar.setHealth(100);
         rangedChar.setHealth(100);
-        factions.joinFaction(meleeChar, "TestFaction");
-        factions.joinFaction(rangedChar, "TestFaction");
+        factionOriginal.joinFaction(meleeChar, "TestFaction");
+        factionOriginal.joinFaction(rangedChar, "TestFaction");
 
         meleeChar.heal(rangedChar, testValue);
         meleeChar.heal(meleeChar, testValue);

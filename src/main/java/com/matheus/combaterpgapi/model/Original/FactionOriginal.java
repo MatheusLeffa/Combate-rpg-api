@@ -1,4 +1,6 @@
-package com.matheus.combaterpgapi.model;
+package com.matheus.combaterpgapi.model.Original;
+
+import com.matheus.combaterpgapi.model.Original.BaseCharacterOriginal;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Factions {
+public class FactionOriginal {
 
     // Atributos
     private final Map<BaseCharacterOriginal, List<String>> factionMembers = new HashMap<>();
