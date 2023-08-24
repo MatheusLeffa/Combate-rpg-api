@@ -1,6 +1,5 @@
 package com.matheus.combaterpgapi.controller;
 
-
 import com.matheus.combaterpgapi.dto.ThingDTO;
 import com.matheus.combaterpgapi.mapper.ThingMapper;
 import com.matheus.combaterpgapi.model.Thing;
@@ -8,7 +7,6 @@ import com.matheus.combaterpgapi.service.ThingService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
