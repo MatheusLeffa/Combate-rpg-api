@@ -5,19 +5,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Getter
 @Setter
-public class Thing {
+public class Character extends Thing{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(nullable = false)
-    private String name;
+    private int level = 1;
     @Column(nullable = false)
-    private int health = 1000;
-    @Column(nullable = false)
-    private boolean alive = true;
-    @Column(nullable = false)
-    private int position = 1;
+    private int range = 1;
 }

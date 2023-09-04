@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import java.util.List;
 
-@Entity(name = "factions")
+@Entity
 @Getter
 @Setter
 public class Faction {
@@ -17,6 +17,6 @@ public class Faction {
     @Column(unique = true, nullable = false)
     private String factionName;
     @Transient
-    private List<BaseCharacterOriginal> characterList;
+    private List<Character> characterList;
 
 }
