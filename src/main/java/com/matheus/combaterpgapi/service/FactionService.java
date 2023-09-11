@@ -12,9 +12,11 @@ import java.util.List;
 public class FactionService {
 
     private final FactionRepository factionRepository;
+    private final CharacterService characterService;
 
-    public FactionService(FactionRepository factionRepository) {
+    public FactionService(FactionRepository factionRepository, CharacterService characterService) {
         this.factionRepository = factionRepository;
+        this.characterService = characterService;
     }
 
     public List<Faction> findAll(){
@@ -44,4 +46,5 @@ public class FactionService {
     public void deleteById(Integer id) {
         factionRepository.deleteById(this.findById(id).getId());
     }
+
 }
