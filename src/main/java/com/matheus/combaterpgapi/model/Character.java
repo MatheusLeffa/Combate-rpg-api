@@ -1,9 +1,11 @@
 package com.matheus.combaterpgapi.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -20,7 +22,8 @@ public class Character extends Thing{
     private int range = 1;
     @Column
     @ManyToMany(mappedBy = "characterList")
-    private Set<Faction> factions;
+    private Set<Faction> factions = new HashSet<>();
+
 
     @Override
     public boolean equals(Object o) {

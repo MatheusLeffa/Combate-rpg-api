@@ -4,8 +4,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
+
 
 @Entity
 @Getter
@@ -22,7 +24,8 @@ public class Faction {
     @JoinTable(name = "faction_has_characters",
             joinColumns = @JoinColumn(name = "faction_id"),
             inverseJoinColumns = @JoinColumn(name = "character_id"))
-    private Set<Character> characterList;
+    private List<Character> characterList = new ArrayList<>();
+
 
     @Override
     public boolean equals(Object o) {

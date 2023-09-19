@@ -54,4 +54,10 @@ public class FactionController {
     public void delete(@PathVariable Integer id){
         factionService.deleteById(id);
     }
+
+    @PostMapping("/joinFaction/{id}")
+    public FactionDTO joinFaction(@RequestBody @Valid FactionDTO faction, @PathVariable Integer id){
+        Faction entity = FactionMapper.dtoToEntity(faction);
+        return FactionMapper.entityToDto(factionService.joinFaction(entity, id));
+    }
 }

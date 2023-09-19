@@ -9,6 +9,7 @@ public class FactionMapper {
         FactionDTO factionDTO = new FactionDTO();
         factionDTO.setId(faction.getId());
         factionDTO.setFactionName(faction.getFactionName());
+        factionDTO.setCharacterList(faction.getCharacterList());
         return factionDTO;
     }
 
