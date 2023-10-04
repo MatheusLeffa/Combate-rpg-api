@@ -1,2 +1,3 @@
-# Combate_rpg
-Combate RPG Kata from https://github.com/ardalis/kata-catalog
+# Combate-rpg-api
+
+Praticando fundamentos de uma API Rest, com base no código do Kata "Combate RPG".
