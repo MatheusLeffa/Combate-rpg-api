@@ -1,3 +1,3 @@
 # Combate-rpg-api
 
-Praticando fundamentos de uma API Rest, com base no código do Kata "Combate RPG".
+Practicing the fundamentals of a Rest API, based on the Kata: [kata-rpg-combat](https://github.com/MatheusLeffa/kata-rpg-combat).
